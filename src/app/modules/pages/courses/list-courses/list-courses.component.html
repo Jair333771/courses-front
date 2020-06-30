@@ -1,0 +1,41 @@
+<section class="wrapper">
+
+    <h3><b>{{obj.title}}</b></h3>
+    
+    <div class="content-panel">
+        <div class="container-fluid">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped table-advance table-hover">
+                        <thead>
+                            <tr>
+                                <th *ngFor="let item of obj.table_heads">{{item}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of obj.list">
+                                <td>
+                                <a href="courses/{{item.id}}">{{item.name}}</a>
+                                </td>
+                                <td>{{item.modality}}</td>
+                                <td>{{item.duration}}</td>
+                                <td>{{item.type}}</td>
+                                <td>{{item.category}}</td>
+                                <td>{{item.career}}</td>
+                                <td>
+                                    <a href="courses/{{item.id}}" class="btn btn-primary btn-xs">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /col-md-12 -->
+            </div>
+            <!-- /row -->
+        </div>
+    </div>
+
+  </section>

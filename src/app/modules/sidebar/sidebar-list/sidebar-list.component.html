@@ -1,0 +1,22 @@
+<div id="sidebar" class="nav-collapse ">
+    <!-- sidebar menu start-->
+    <ul class="sidebar-menu" id="nav-accordion">
+      <app-sidebar-user></app-sidebar-user>
+
+      <li *ngFor="let item of obj.menu" [ngClass]="{'sub-menu': item.sub.length > 0, 'mt': item.sub.length == 0}">
+        <a href="{{item.url}}">
+          <i class="fa fa-{{item.icon}}"></i>
+          <span>{{item.name}}</span>
+        </a>
+        <ul class="sub" *ngIf="item.sub.length > 0">  
+          <li *ngFor="let elm of item.sub" [ngClass]="{'sub-menu': item.sub.length > 0}">
+            <a href="{{elm.url}}">
+              <span>{{elm.name}}</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+    <!-- sidebar menu end-->
+  </div>

@@ -1,0 +1,65 @@
+
+
+<section class="wrapper">
+
+    <div class="alert mt" *ngIf="obj.status != null" [ngClass]="{'alert-success': obj.status.status == 200, 'alert-danger': obj.status.status != 200}" >
+       <b>{{obj.status.title}}</b> {{obj.status.description}}
+    </div>
+
+    <h3><b>{{obj.title}}</b></h3>
+    
+    <div class="content-panel mt">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="container-fluid">
+                <form #editUser="ngForm" (ngSubmit)="register(editUser)" class="form-horizontal style-form">
+                    <input type="hidden" name="id" [(ngModel)]="obj.item.id" >
+                    <div class="form-group">
+                    <label class="col-lg-2 control-label">Full Name</label>
+                    <div class="col-lg-10">
+                        <input type="text" placeholder="" name="fullName" id="name" [(ngModel)]="obj.item.fullName" class="form-control">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Document</label>
+                        <div class="col-lg-10">
+                            <input type="text" placeholder="" name="document" id="document" [(ngModel)]="obj.item.document" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    <label class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-10">
+                        <input type="email" placeholder="" name="email" [(ngModel)]="obj.item.email" id="mod" class="form-control">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <label class="col-lg-2 control-label">Born Date</label>
+                    <div class="col-lg-10">
+                        <input type="date" placeholder="" name="bornDate" [(ngModel)]="obj.item.bornDate" id="date" class="form-control">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Role</label>
+                        <div class="col-lg-10">
+                            <input type="text" placeholder="" name="role" [(ngModel)]="obj.item.role" id="typed" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Gender</label>
+                        <div class="col-lg-10">
+                            <input type="text" placeholder="" name="gender" [(ngModel)]="obj.item.gender" id="cat" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <button class="btn btn-theme" type="submit">Submit</button>
+                    </div>
+                    </div>
+                </form>
+                </div>
+                <!-- /form-panel -->
+            </div>
+            <!-- /col-lg-12 -->
+        </div>
+    </div>
+  </section>

@@ -1,0 +1,91 @@
+<section class="wrapper">
+
+    <h3><b>{{obj.title}}</b></h3>
+    
+    <div class="content-panel">
+        <div class="container-fluid">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped table-advance table-hover">
+                        <thead>
+                            <tr>
+                                <th *ngFor="let item of obj.tableHeads">{{item}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of obj.list">
+                                <td>
+                                <a href="users/{{item.id}}">{{item.fullName}}</a>
+                                </td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.bornDate}}</td>
+                                <td>{{item.role}}</td>
+                                <td>{{item.gender}}</td>
+                                <td>{{item.discriminator}}</td>
+                                <td>
+                                    <a href="users/{{item.id}}" class="btn btn-primary btn-xs">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /col-md-12 -->
+            </div>
+            <!-- /row -->
+
+            <h4 class="mt">List by age range</h4>
+
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped table-advance table-hover">
+                        <thead>
+                            <tr>
+                                <th *ngFor="let item of obj.tableHeadsByRage">{{item}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of obj.listByRange">
+                                <td>{{item.id}}</td>
+                                <td>{{item.range}}</td>
+                                <td>{{item.total}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /col-md-12 -->
+            </div>
+            <!-- /row -->
+
+            <h4 class="mt">List by gender</h4>
+
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped table-advance table-hover">
+                        <thead>
+                            <tr>
+                                <th *ngFor="let item of obj.tableHeadsByGender">{{item}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of obj.listByGender">
+                                <td>{{item.id}}</td>
+                                <td>{{item.gender}}</td>
+                                <td>{{item.total}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /col-md-12 -->
+            </div>
+            <!-- /row -->
+
+
+        </div>
+    </div>
+
+  </section>
